@@ -35,6 +35,8 @@ defmodule ServerWeb.Endpoint do
     key: "_server_key",
     signing_salt: "9paO+nAE"
 
+  plug CORSPlug#, origin: ["http://192.168.0.160:8080"]
+
   plug ServerWeb.Router
 
   @doc """

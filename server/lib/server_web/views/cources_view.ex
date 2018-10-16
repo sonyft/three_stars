@@ -13,6 +13,7 @@ defmodule ServerWeb.CourcesView do
   def render("cources.json", %{cources: cources}) do
     %{id: cources.id,
       cource_sell: cources.cource_sell,
-      cource_buy: cources.cource_buy}
+      cource_buy: cources.cource_buy,
+      currencies_id: cources.currencies_id}
   end
 end

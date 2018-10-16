@@ -7,6 +7,8 @@ defmodule Server.Currency.Currencies do
     field :code_name, :string
     field :name, :string
 
+    has_many(:cources, Server.Currency.Cources)
+
     timestamps()
   end
 

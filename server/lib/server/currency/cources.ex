@@ -4,6 +4,7 @@ defmodule Server.Currency.Cources do
 
 
   schema "cources" do
+    belongs_to(:currencies, Server.Currency.Currencies)
     field :cource_buy, :float
     field :cource_sell, :float
 
@@ -13,7 +14,7 @@ defmodule Server.Currency.Cources do
   @doc false
   def changeset(cources, attrs) do
     cources
-    |> cast(attrs, [:cource_sell, :cource_buy])
-    |> validate_required([:cource_sell, :cource_buy])
+    |> cast(attrs, [:cource_sell, :cource_buy, :currencies_id])
+    |> validate_required([:cource_sell, :cource_buy, :currencies_id])
   end
 end
