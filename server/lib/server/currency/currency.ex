@@ -37,6 +37,22 @@ defmodule Server.Currency do
   """
   def get_currencies!(id), do: Repo.get!(Currencies, id)
 
+   @doc """
+  Gets a single currencies.
+
+  Raises `Ecto.NoResultsError` if the Currencies does not exist.
+
+  ## Examples
+
+      iex> get_currencies!(123)
+      %Currencies{}
+
+      iex> get_currencies!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_currencies_by!(code_name), do: Repo.get_by!(Currencies, code_name: code_name)
+
   @doc """
   Creates a currencies.
 
